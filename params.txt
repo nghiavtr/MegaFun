@@ -1,0 +1,14 @@
+#parameter setting
+anno_outpath="/yourpath/annoOut"
+chocoPath="/yourpath/full_chocophlan.v201901_v31/"
+chocoMap="/yourpath/TaxChocoDB/choco_list_full_chocophlan.v201901_v31.RData"
+ncbi_name="/yourpath/TaxChocoDB/ncbi_name_db.RData"
+ncbiSummary="/yourpath/TaxChocoDB/assembly_summary_refseq.txt.gz"
+ncore=16
+metaphlan_outpath="/yourpath/metaphlan_out"
+metaphlan_prop=0.5
+
+runMetaPhlan="YES" # {YES, NO}
+sample_Dir=/yourpath/Dataset # FASTA/FASTQ files for samples
+suffix_sample="gz"
+file_type="fastq" # {'fastq', 'fasta'}

@@ -1,0 +1,12 @@
+#parameter setting
+ncore=16
+anno_outpath="annoOut"
+chocoMap="choco_list_full_chocophlan.v201901_v31.RData"
+ncbi_name="ncbi_name_db.RData"
+ncbiSummary="ncbi_assembly_summary.txt.gz"
+chocoPath="full_chocophlan.v201901_v31/"
+metaphlan_outpath="/nfs/NGS/MegaFun_proj/Nghia_test/projtest/metaphlan_out"
+runMetaPhlan="YES"
+sample_Dir="/nfs/NGS/MegaFun_proj/Nghia_test/test_inputdata/" # FASTA/FASTQ files for samples
+suffix_sample="gz"
+file_type="fasta" # {'fastq', 'fasta'}
