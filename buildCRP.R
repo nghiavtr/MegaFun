@@ -303,7 +303,7 @@ CRPCOUNT <- foreach(i=1:length(OTC)) %dopar%{
 #  #extract CRP matrix
 }
 
-) #system
+#) #system
 
 #### now compute CRP, use H_thres (default=0) to filter out too low proportion sharing between two transcripts
 
