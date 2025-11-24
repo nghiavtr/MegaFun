@@ -130,7 +130,13 @@ res = foreach(i = 1:length(CRP), .packages = c("Biostrings","data.table")) %dopa
 
   #now add the sequence from pan genome if avail
   system(paste0("mkdir ", temp_path, "/isolate_seqs"), ignore.stdout = TRUE, ignore.stderr = TRUE)
-  if (length(pan_seqs) > 0) writeXStringSet(pan_seqs, file = paste0(temp_path, "/isolate_seqs/isolate_seqs.fasta"),append=TRUE)
+  if (length(pan_seqs) > 0) writeXStringSet(pan_seqs, file = paste0(temp_path, "/isolate_seqs/isolate_seqs_pan.fasta"),append=TRUE)
+
+  #combine all files into one
+  mycommand1=paste0("cat ",temp_path,"/isolate_seqs", "/isolate_seqs_*.fasta > ",temp_path,"/isolate_seqs", "/isolate_seqs.fasta")
+  system(mycommand1)
+  mycommand2=paste0("rm ",temp_path,"/isolate_seqs", "/isolate_seqs_*.fasta")
+  system(mycommand2)
 
   return(i)
 } #of foreach
