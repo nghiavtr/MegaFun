@@ -158,7 +158,8 @@ res = foreach(i = 1:length(flist), .packages = c("Biostrings","data.table")) %do
     if(!dir.exists(temp_path)) dir.create(temp_path)
     system(paste0("mkdir ", temp_path, "/isolate_seqs"), ignore.stdout = TRUE, ignore.stderr = TRUE)
 
-    writeXStringSet(fa_out[[j]], file = paste0(temp_path,"/isolate_seqs", "/isolate_seqs.fasta"),append=TRUE)
+    myfn=paste0(temp_path,"/isolate_seqs", "/isolate_seqs_",sname,".fasta")
+    writeXStringSet(fa_out[[j]], file = myfn, append=TRUE)
     write.table(fa_out_species_name[[j]], file = paste0(temp_path, "/temp.list"), row.names = F, col.names = F, quote = F,append=TRUE)
   }
 
