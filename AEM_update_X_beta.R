@@ -9,12 +9,13 @@
 ## Take the workdir and core arguments
 rm(list = ls())
 
-rm(list=ls())
+design.matrix="X_matrix/X_matrix.RData"
 args = commandArgs(trailingOnly=TRUE)
 if (length(args)>0){
     for (i in 1:length(args)){
         res=unlist(strsplit(args[i],"="))
         if (res[1]=="in"){pan_eqv_dir=as.character(res[2])}
+        if (res[1]=="Xmatrix"){design.matrix=as.character(res[2])}
     }
 } else {
     print("Error: input folder is missing!")
@@ -30,7 +31,7 @@ core = 8 #default
 merge.paralogs = TRUE ## default is to combine paralogs in the updated X to obtain the best performance
 fout="XAEM_isoform_expression.RData"
 foutr="XAEM_paralog_expression.RData"
-design.matrix="X_matrix/X_matrix.RData"
+#design.matrix="X_matrix/X_matrix.RData"
 isoform.method="average" #  "average" or "total"
 remove.ycount=TRUE
 

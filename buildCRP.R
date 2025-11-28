@@ -30,6 +30,18 @@ H_thres=0.025
 H_thres_min=0.01
 targetsize=500
 
+args = commandArgs(trailingOnly=TRUE)
+cat("\nNumber of arguments: ",length(args))
+cat("\nList of arguments: ",args,"\n")
+
+if (length(args)>0)
+for (i in 1:length(args)){
+  res=unlist(strsplit(args[i],"="))
+  if (res[1]=="eqClass"){eqClassFn=as.character(res[2])}
+  if (res[1]=="out"){fout=as.character(res[2])}
+}
+
+
 
 source("/path/to/MegaFun/Rsource.R")
 

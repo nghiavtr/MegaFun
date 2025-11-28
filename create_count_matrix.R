@@ -1,10 +1,13 @@
 ## Take the workdir and core arguments
 rm(list=ls())
+design.matrix="X_matrix/X_matrix.RData"
+
 args = commandArgs(trailingOnly=TRUE)
 if (length(args)>0){
     for (i in 1:length(args)){
         res=unlist(strsplit(args[i],"="))
         if (res[1]=="in"){pan_eqv_dir=as.character(res[2])}
+        if (res[1]=="Xmatrix"){design.matrix=as.character(res[2])}
     }
 } else {
     print("Error: input folder is missing!")
@@ -13,7 +16,7 @@ if (length(args)>0){
 
 curdir = getwd()
 workdir= paste0(curdir,"/", pan_eqv_dir)
-design.matrix="X_matrix/X_matrix.RData"
+
 core = 8 #default
 
 source("/path/to/MegaFun/Rsource.R")
