@@ -42,7 +42,6 @@ isolate_singleton = do.call(rbind, singleton)
 
 #get previous singletons estimated from pangenome
 load(paste0(pan_eqv_dir, "/Est_result_Singletons.RData"))
-#load("simulated_data/eqv/Est_result_Singletons.RData")
 
 suppressMessages(suppressWarnings(library(Biostrings)))
 pan_genome = readDNAStringSet(panfn)
@@ -62,18 +61,18 @@ pan_short2long=pan_name
 names(pan_short2long)=pan_shortname
 
 
-#nghiavtr-03/12/2025 - begin: fix the mismatched names
-pan_name2 = sapply(pan_name, function(s) {
-  s1 = unlist(strsplit(s, "\\."))
-  s1[1]=gsub("PAN","",s1[1])
-  paste0(s1[1], s1[3])
-})
-names(pan_name2)=NULL
-pan_long2short=pan_shortname
-names(pan_long2short)=pan_name2
-pan_short2long=pan_name2
-names(pan_short2long)=pan_shortname
-#nghiavtr-03/12/2025 - end
+##nghiavtr-03/12/2025 - begin: fix the mismatched names
+#pan_name2 = sapply(pan_name, function(s) {
+#  s1 = unlist(strsplit(s, "\\."))
+#  s1[1]=gsub("PAN","",s1[1])
+#  paste0(s1[1], s1[3])
+#})
+#names(pan_name2)=NULL
+#pan_long2short=pan_shortname
+#names(pan_long2short)=pan_name2
+#pan_short2long=pan_name2
+#names(pan_short2long)=pan_shortname
+##nghiavtr-03/12/2025 - end
 
 
 convertPanName <-function(mat){

@@ -196,17 +196,15 @@ done
 # fix names in eqclass for PAN
 Rscript /path/to/MegaFun/fixEqNameX.R eqClass=X_matrix/eqClass.txt
 
-# create X for PAN
-Rscript /path/to/MegaFun/buildCRP.R eqClass=X_matrix/eqClass.txt_PAN out=X_matrix/X_matrix_PAN.RData
-
-
+## create X for PAN
+#Rscript /path/to/MegaFun/buildCRP.R eqClass=X_matrix/eqClass.txt_PAN out=X_matrix/X_matrix_PAN.RData
 
 # generate Y count
-Rscript /path/to/MegaFun/create_count_matrix.R in=${pan_eqv_Dir} Xmatrix=X_matrix/X_matrix_PAN.RData > create_count_matrix.log 2>&1
+Rscript /path/to/MegaFun/create_count_matrix.R in=${pan_eqv_Dir} Xmatrix=X_matrix/X_matrix.RData > create_count_matrix.log 2>&1
 
-##### AEM for Xmatrix from pan-genome #####
-echo "AEM for pan-X"
-Rscript /path/to/MegaFun/AEM_update_X_beta.R in=${pan_eqv_Dir} Xmatrix=X_matrix/X_matrix_PAN.RData> AEM_update_X_beta.log 2>&1 
+###### AEM for Xmatrix from pan-genome #####
+#echo "AEM for pan-X"
+Rscript /path/to/MegaFun/AEM_update_X_beta.R in=${pan_eqv_Dir} Xmatrix=X_matrix/X_matrix.RData> AEM_update_X_beta.log 2>&1 
 
 # Re-design X matrix with isolate reference
 echo "Redesign for isolate-X"
