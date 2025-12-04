@@ -193,8 +193,8 @@ do
     rm $out_bam
 done
 
-# fix names in eqclass for PAN
-Rscript /path/to/MegaFun/fixEqNameX.R eqClass=X_matrix/eqClass.txt
+## fix names in eqclass for PAN
+#Rscript /path/to/MegaFun/fixEqNameX.R eqClass=X_matrix/eqClass.txt
 
 ## create X for PAN
 #Rscript /path/to/MegaFun/buildCRP.R eqClass=X_matrix/eqClass.txt_PAN out=X_matrix/X_matrix_PAN.RData
